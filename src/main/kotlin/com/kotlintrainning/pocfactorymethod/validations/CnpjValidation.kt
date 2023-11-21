@@ -8,8 +8,8 @@ import com.kotlintrainning.pocfactorymethod.model.DataNotFoundMsgEnum.CNPJ_NOT_F
 
 
 @Component
+@ValidationIdentifier("cnpj-validation")
 class CnpjValidation: UserValidationAbstract() {
-    override fun supports(rule: String): Boolean = rule.equals("cnpj", ignoreCase = true)
 
     override fun validate(userDTO: UserDTO, validationResponse: ValidationResponse): Boolean {
         return userDTO.cnpj.isNotBlank()

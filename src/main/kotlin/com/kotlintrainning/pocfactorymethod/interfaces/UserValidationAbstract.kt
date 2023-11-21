@@ -11,8 +11,6 @@ abstract class UserValidationAbstract {
         else onFailure(userDTO, validationResponse)
     }
 
-    abstract fun supports(rule: String): Boolean
-
     protected abstract fun validate(userDTO: UserDTO, validationResponse: ValidationResponse): Boolean
 
     protected abstract fun onSuccess(userDTO: UserDTO, validationResponse: ValidationResponse)

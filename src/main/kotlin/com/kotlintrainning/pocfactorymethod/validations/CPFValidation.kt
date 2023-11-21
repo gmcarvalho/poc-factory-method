@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component
 import com.kotlintrainning.pocfactorymethod.model.DataNotFoundMsgEnum.CPF_NOT_FOUND
 
 @Component
+@ValidationIdentifier("cpf-validation")
 class CPFValidation: UserValidationAbstract() {
-    override fun supports(rule: String): Boolean = rule.equals("cpf", ignoreCase = true)
 
     override fun validate(userDTO: UserDTO, validationResponse: ValidationResponse): Boolean {
         return userDTO.cpf.isNotBlank()

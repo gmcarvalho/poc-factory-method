@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component
 import com.kotlintrainning.pocfactorymethod.model.DataNotFoundMsgEnum.BIRTHDATE_NOT_FOUND
 
 @Component
+@ValidationIdentifier("birthdate-validation")
 class BirthdateValidation: UserValidationAbstract() {
-    override fun supports(rule: String): Boolean = rule.equals("birthdate", ignoreCase = true)
 
     override fun validate(userDTO: UserDTO, validationResponse: ValidationResponse): Boolean {
         return userDTO.birthdate.isNotBlank()

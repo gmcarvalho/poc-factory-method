@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component
 import com.kotlintrainning.pocfactorymethod.model.DataNotFoundMsgEnum.NAME_NOT_FOUND
 
 @Component
+@ValidationIdentifier("user-name-validation")
 class NameValidation: UserValidationAbstract() {
-    override fun supports(rule: String): Boolean = rule.equals("name", ignoreCase = true)
 
     override fun validate(userDTO: UserDTO, validationResponse: ValidationResponse): Boolean {
         return userDTO.name.isNotBlank()

@@ -7,8 +7,8 @@ import com.kotlintrainning.pocfactorymethod.model.dto.UserDTO
 import org.springframework.stereotype.Component
 
 @Component
+@ValidationIdentifier("bank-account-validation")
 class BankAccountValidation: UserValidationAbstract() {
-    override fun supports(rule: String): Boolean = rule.equals("bankAccount", ignoreCase = true)
 
     override fun validate(userDTO: UserDTO, validationResponse: ValidationResponse): Boolean {
         return userDTO.bankAccounts.isNotBlank()
