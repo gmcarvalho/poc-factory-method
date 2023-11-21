@@ -6,7 +6,6 @@ import com.kotlintrainning.pocfactorymethod.model.dto.UserDTO
 import org.springframework.stereotype.Component
 import com.kotlintrainning.pocfactorymethod.model.DataNotFoundMsgEnum.CNPJ_NOT_FOUND
 
-
 @Component
 @ValidationIdentifier("cnpj-validation")
 class CnpjValidation: UserValidationAbstract() {

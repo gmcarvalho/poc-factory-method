@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component
 @Component
 @ValidationIdentifier("bank-account-validation")
 class BankAccountValidation: UserValidationAbstract() {
-
     override fun validate(userDTO: UserDTO, validationResponse: ValidationResponse): Boolean {
         return userDTO.bankAccounts.isNotBlank()
     }
