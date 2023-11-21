@@ -1,11 +1,11 @@
 package com.kotlintrainning.pocfactorymethod.services
 
-import com.kotlintrainning.pocfactorymethod.repositories.findRulesByBusinessProfile
+import com.kotlintrainning.pocfactorymethod.repositories.BusinessProfileValidationRepository
 import org.springframework.stereotype.Service
 
 @Service
-class BusinessProfileService {
-    fun getRulesByBusinessProfile(businessProfile: String): List<String> {
-        return findRulesByBusinessProfile(businessProfile).rules
+class BusinessProfileService(private val businessProfileValidationRepository: BusinessProfileValidationRepository) {
+    fun findValidationByBusinessProfile(businessProfile: String): String{
+        return businessProfileValidationRepository.findByBusinessProfile(businessProfile).validationClassIdentifier
     }
 }

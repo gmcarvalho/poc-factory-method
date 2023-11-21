@@ -9,13 +9,6 @@ import org.springframework.web.bind.annotation.*
 class UserValidationsController(private val validationService: ValidationService) {
     @PostMapping("/user")
     fun validateUser(@RequestParam ucode: String, @RequestParam businessProfile: String): ValidationResponse {
-        val startTime = System.currentTimeMillis()
-        val response = validationService.process(ucode, businessProfile)
-
-        val endTime = System.currentTimeMillis()
-        val executionTime = endTime - startTime
-        println("Tempo de execução: $executionTime milissegundos")
-
-        return response
+        return validationService.process(ucode, businessProfile)
     }
 }

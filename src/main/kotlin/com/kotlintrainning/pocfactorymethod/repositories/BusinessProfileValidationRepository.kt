@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface BusinessProfileValidationRepository: JpaRepository<BusinessProfileValidation, Long>{
-    fun findByBusinessProfile(businessProfile: String): List<BusinessProfileValidation>
+    fun findByBusinessProfile(businessProfile: String): BusinessProfileValidation
 }
