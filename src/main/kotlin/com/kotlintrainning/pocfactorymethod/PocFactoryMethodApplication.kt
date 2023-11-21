@@ -1,9 +1,13 @@
 package com.kotlintrainning.pocfactorymethod
 
-import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 import org.springframework.boot.runApplication
+import org.springframework.context.annotation.Configuration
 
-@SpringBootApplication
+
+@Configuration
+@EnableAutoConfiguration(exclude = [DataSourceAutoConfiguration::class])
 class PocFactoryMethodApplication
 
 fun main(args: Array<String>) {
