@@ -4,7 +4,7 @@ import com.kotlintrainning.pocfactorymethod.repositories.BusinessProfileValidati
 import org.springframework.stereotype.Service
 
 @Service
-class BusinessProfileService(private val businessProfileValidationRepository: BusinessProfileValidationRepository) {
+class BusinessProfileValidationService(private val businessProfileValidationRepository: BusinessProfileValidationRepository) {
     fun findValidationByBusinessProfile(businessProfile: String): String{
         return businessProfileValidationRepository.findByBusinessProfile(businessProfile).validationClassIdentifier
     }

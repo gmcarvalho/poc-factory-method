@@ -7,11 +7,15 @@ import org.springframework.stereotype.Service
 @Service
 class ValidationService(
     private val validationConfigService: ValidationConfigService,
+    private val businessProfileValidationService: BusinessProfileValidationService,
     private val businessProfileService: BusinessProfileService) {
 
     fun process(ucode: String, businessProfile: String): ValidationResponse {
         val user = findUser(ucode) //todo busca os dados no banco
-        val validationClassIdentifier = businessProfileService.findValidationByBusinessProfile(businessProfile)
+
+        val businessProfile1 = businessProfileService.findByName(businessProfile)
+
+        val validationClassIdentifier = businessProfileValidationService.findValidationByBusinessProfile(businessProfile)
         val validationClasses = validationConfigService.loadValidationConfigForProfile(businessProfile, validationClassIdentifier)
 
         val validationResponse = ValidationResponse()

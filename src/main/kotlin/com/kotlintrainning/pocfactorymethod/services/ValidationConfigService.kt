@@ -9,7 +9,6 @@ class ValidationConfigService(private val instantiatedClasses: List<UserValidati
 
     fun loadValidationConfigForProfile(businessProfile: String, validationClassIdentifier: String): List<UserValidationAbstract> {
         val validationClasses = mutableListOf<UserValidationAbstract>()
-
         for (validationClass in instantiatedClasses){
             val annotation = validationClass.javaClass.getAnnotation(ValidationIdentifier::class.java)
 
