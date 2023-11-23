@@ -1,10 +1,8 @@
 package com.kotlintrainning.pocfactorymethod.repositories
 
 import com.kotlintrainning.pocfactorymethod.model.entities.BusinessProfileValidation
-import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.stereotype.Repository
+import org.springframework.data.mongodb.repository.MongoRepository
 
-@Repository
-interface BusinessProfileValidationRepository: JpaRepository<BusinessProfileValidation, Long>{
+interface BusinessProfileValidationRepository: MongoRepository<BusinessProfileValidation, Long> {
     fun findByBusinessProfile(businessProfile: String): BusinessProfileValidation
 }

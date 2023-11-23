@@ -1,18 +1,17 @@
 package com.kotlintrainning.pocfactorymethod.model.entities
 
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import org.bson.types.ObjectId
+import org.springframework.data.mongodb.core.mapping.Document
+import org.springframework.data.mongodb.core.mapping.MongoId
 
-@Entity
-@Table(name = "business_profile_validation")
+
+//@Entity
+//@Table(name = "business_profile_validation")
+@Document(collection = "business_profile_validation")
 class BusinessProfileValidation {
 
-    @Id
-    var id: Long? = null
-    @Column(name = "business_profile")
-    val businessProfile: String = ""
-    @Column(name = "validation_class_identifier")
-    val validationClassIdentifier = ""
+    @MongoId
+    var id: ObjectId = ObjectId()
+    var businessProfile: String = ""
+    var validationClassIdentifier = ""
 }
