@@ -11,7 +11,7 @@ class BusinessProfileService(private val businessProfileRepository: BusinessProf
         return businessProfileRepository.save(businessProfile)
     }
 
-    fun findByName(name: String):BusinessProfile{
+    fun findByName(name: String):BusinessProfile?{
         return businessProfileRepository.findByName(name)
     }
 

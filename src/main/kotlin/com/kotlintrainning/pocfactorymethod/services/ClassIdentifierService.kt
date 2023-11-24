@@ -11,7 +11,7 @@ class ClassIdentifierService(private val classIdentifierRepository: ClassIdentif
         return classIdentifierRepository.save(classIdentifier)
     }
 
-    fun findByName(name: String):ClassIdentifier{
+    fun findByName(name: String):ClassIdentifier?{
         return classIdentifierRepository.findByName(name)
     }
 

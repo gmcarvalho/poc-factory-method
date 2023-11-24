@@ -5,6 +5,6 @@ import org.springframework.data.mongodb.repository.MongoRepository
 
 interface ClassIdentifierRepository: MongoRepository<ClassIdentifier, Long> {
 
-    fun findByName(name: String): ClassIdentifier
+    fun findByName(name: String): ClassIdentifier?
 
 }

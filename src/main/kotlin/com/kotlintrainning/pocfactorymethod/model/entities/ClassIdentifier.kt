@@ -10,6 +10,6 @@ class ClassIdentifier {
 
     @MongoId
     var id: ObjectId = ObjectId()
-    @Indexed(unique=true)
+    @Indexed(background = true, unique = true)
     var name: String = ""
 }

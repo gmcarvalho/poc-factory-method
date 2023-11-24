@@ -5,6 +5,6 @@ import org.springframework.data.mongodb.repository.MongoRepository
 
 interface BusinessProfileRepository: MongoRepository<BusinessProfile, Long> {
 
-    fun findByName(name: String): BusinessProfile
+    fun findByName(name: String): BusinessProfile?
 
 }

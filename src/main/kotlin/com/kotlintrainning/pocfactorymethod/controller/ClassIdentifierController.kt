@@ -21,7 +21,7 @@ class ClassIdentifierController(private val classIdentifierService: ClassIdentif
     }
 
     @GetMapping("/findByName")
-    fun findByName(@RequestParam name: String): ClassIdentifier{
+    fun findByName(@RequestParam name: String): ClassIdentifier?{
         return classIdentifierService.findByName(name)
     }
 }

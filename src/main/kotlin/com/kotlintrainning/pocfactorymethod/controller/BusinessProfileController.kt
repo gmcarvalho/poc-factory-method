@@ -21,7 +21,7 @@ class BusinessProfileController(private val businessProfileService: BusinessProf
     }
 
     @GetMapping("/findByName")
-    fun findByName(@RequestParam name: String): BusinessProfile{
+    fun findByName(@RequestParam name: String): BusinessProfile?{
         return businessProfileService.findByName(name)
     }
 }
